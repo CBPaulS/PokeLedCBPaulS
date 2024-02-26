@@ -1,0 +1,7 @@
+{
+  "name": "SumFuapApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
