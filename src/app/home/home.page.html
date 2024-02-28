@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      SUAVE
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-grid>
+  <ion-row>
+  <ion-col>
+    <ion-item>
+      <ion-label position="floating">Nombre del Pokémon</ion-label>
+      <ion-input [(ngModel)]="pokemonName"></ion-input>
+    </ion-item>
+    <ion-button (click)="getPokemonDataName(pokemonName)">Buscar por nombre</ion-button>
+    <ion-card *ngIf="pokemonNameResult">
+      <img [src]="pokemonNameResult.sprites.front_default" />
+      <ion-card-header>
+        <ion-card-title>{{ pokemonNameResult.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        ID: {{ pokemonNameResult.id }}
+        Tipo: {{pokemonType}}
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
 </ion-content>
