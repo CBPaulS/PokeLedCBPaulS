@@ -13,7 +13,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())],
+    provideFirestore(() => getFirestore()),
+    provideFirebaseApp(() => initializeApp({"projectId":"pokeapileds","appId":"1:1015882888981:web:e69587059d5a7c04c35b1c","storageBucket":"pokeapileds.appspot.com","apiKey":"AIzaSyAinG4XIrtlPkA7VjcvgvJQ9_6HaGST5kg","authDomain":"pokeapileds.firebaseapp.com","messagingSenderId":"1015882888981"}))],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
