@@ -11,20 +11,28 @@
   <ion-row>
   <ion-col>
     <ion-item>
-      <ion-label position="floating">Nombre del Pokémon</ion-label>
-      <ion-input [(ngModel)]="pokemonName"></ion-input>
+      <input placeholder="Pokemon?" class="input" [(ngModel)]="pokemonName">
     </ion-item>
-    <ion-button (click)="getPokemonDataName(pokemonName)">Buscar por nombre</ion-button>
-    <ion-card *ngIf="pokemonNameResult">
-      <img [src]="pokemonNameResult.sprites.front_default" />
-      <ion-card-header>
-        <ion-card-title>{{ pokemonNameResult.name }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        ID: {{ pokemonNameResult.id }}
-        Tipo: {{pokemonType}}
-      </ion-card-content>
-    </ion-card>
+    <button (click)="getPokemonDataName(pokemonName)">Buscar por nombre</button>
+    <div class="card">
+      <div class="tools">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+      </div>
+      <div class="card__content" *ngIf="pokemonNameResult">
+        <img [src]="pokemonNameResult.sprites.front_default" />
+        <h2>{{ pokemonNameResult.name }}</h2>
+        <h2>ID: {{ pokemonNameResult.id }}</h2>
+        <h2>Tipo: {{pokemonType}}</h2>
+      </div>
+    </div>
   </ion-col>
 </ion-row>
 </ion-grid>
